@@ -5,7 +5,7 @@ export default function Projects() {
         <div>
             <main>
                 <h1>Projects</h1>
-                <p>Welcome to my projects page!</p>
+                <p>Nothing to see here yet. Check back later for updates!</p>
             </main>
         </div>
     );

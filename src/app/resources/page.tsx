@@ -5,7 +5,7 @@ export default function Resources() {
         <div>
             <main>
                 <h1>Resources</h1>
-                <p>Welcome to my resources page!</p>
+                <p>Nothing to see here yet. Check back later for updates!</p>
             </main>
         </div>
     );

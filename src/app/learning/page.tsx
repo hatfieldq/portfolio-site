@@ -5,7 +5,7 @@ export default function Learning() {
         <div>
             <main>
                 <h1>Learning</h1>
-                <p>Welcome to my learning page!</p>
+                <p>Nothing here yet. Check back later for updates!</p>
             </main>
         </div>
     );

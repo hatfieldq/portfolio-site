@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Orbitron, Monda } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const monda = Monda({
+  variable: "--font-monda",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
+
 
 export const metadata: Metadata = {
   title: "Q's Portfolio",
@@ -27,7 +29,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${orbitron.variable} ${monda.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Nav />

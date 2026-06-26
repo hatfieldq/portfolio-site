@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #ebebeb;
   --foreground: #171717;
+  --surface: #ffffff;
 }
 
 @theme inline {
@@ -11,6 +12,7 @@
   --font-heading: var(--font-orbitron);
   --font-sans: var(--font-monda);
   --font-mono: var(--font-monda);
+  --color-surface: var(--surface);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,7 +32,4 @@ body {
   font-family: var(--font-sans);
 }
 
-nav {
-  font-family: var(--font-orbitron);
-  font-size: 25px;
-}
+

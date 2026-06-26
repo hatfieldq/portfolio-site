@@ -33,7 +33,13 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Nav />
-        {children}
+
+
+        <main className="flex-grow max-w-4xl mx-auto p-4 bg-surface">
+          {children}
+        </main>
+        
+        
         <Footer />
       </body>
     </html>

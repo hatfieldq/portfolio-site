@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Nav() {
     return (
-        <nav className="flex items-center justify-between px-4 py-2 font-heading text-3xl bg-surface">
+        <nav className="flex items-center justify-between px-4 py-2 font-heading bg-surface sm:text-lg md:text-xl lg:text-2xl">
             <Link href="/" className="hover:text-green-500">Quinnten Hatfield</Link>
             <div className="flex items-center gap-4">
             <Link href="/about" className="hover:text-green-500">About</Link>

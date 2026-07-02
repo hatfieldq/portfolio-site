@@ -11,7 +11,7 @@ export default function About() {
                     alt="Image of Quinnten and a friend" 
                     width={400}
                     height={300}  
-                    className=" mb-4 w-full md:w-auto"           
+                    className=" mb-4 w-full md:w-auto rounded-sm"           
                 />
             </div>
 

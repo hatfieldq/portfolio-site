@@ -17,7 +17,7 @@ export default function About() {
 
             <div>
                 <h1 className="text-2xl font-bold">About Me</h1>
-                <p className="indent-8">Hey, I'm Quinnten! I'm a modeling engineer who is interested in creating
+                <p className="indent-8 mt-4">Hey, I'm Quinnten! I'm a modeling engineer who is interested in creating
                      physics-based models for real-world applications. This site is a place 
                      where I share my work and thoughts related to my career and life interests. 
                      I'll be updating this regularly with content related to my projects and learning, 

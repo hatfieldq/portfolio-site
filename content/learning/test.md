@@ -1,7 +1,8 @@
 ---
 title: "Test Markdown"
 date: "2026-07-05"
-tags: {"RF", "EW", "WEbDev"}
+tags: ["RF", "EW", "WebDev"]
+description: "asldkfja;sldkfa a;sldkfja;sdklfj"
 ---
 
 # Markdown syntax guide

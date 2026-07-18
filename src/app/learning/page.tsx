@@ -10,6 +10,10 @@ export default function Learning() {
             {posts.length === 0 ? (
                 <p>Nothing here yet. Check back later for updates.</p>
             ) : (
+                <div>
+                <p className="mt-4">Below are some blog-style write ups for different topics that I have been exploring in my personal time.
+                    Also there are some write ups that relate directly to some of my projects!
+                </p>
                 <ul className="mt-4 space-y-3">
                     {posts.map((post) => (
                         <li key={post.slug}>
@@ -26,6 +30,7 @@ export default function Learning() {
                         </li>
                     ))}
                 </ul>
+                </div>
             )}
         </main>
     );

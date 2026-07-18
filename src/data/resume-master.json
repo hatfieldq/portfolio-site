@@ -1,0 +1,259 @@
+{
+  "$comment": "MASTER RESUME FILE — deliberately over-complete. Every bullet tagged by theme. Application variants select/order bullets from here. Items marked _verify contain numbers or claims Claude drafted as placeholders — replace with real values before use.",
+
+  "basics": {
+    "name": "Quinnten Hatfield",
+    "label": "Modeling & Simulation Engineer — RF/EW Systems",
+    "clearance": "Active TS/SCI",
+    "email": "qhatfield27@gmail.com",
+    "phone": "(410) 227-1625",
+    "url": "https://quinntenhatfield.com",
+    "_comment_url": "replace with actual portfolio domain once deployed",
+    "profiles": [
+      { "network": "LinkedIn", "url": "https://www.linkedin.com/in/quinnten-hatfield/" },
+      { "network": "GitHub", "url": "https://github.com/hatfieldq" }
+    ],
+    
+    "summary": "Modeling & Simulation engineer (Active TS/SCI) specializing in RF/electronic warfare systems: time difference of arrival (TDOA) geolocation, passive radar, direction finding, and MATLAB/Python signal processing. B.S. Applied Physics and B.S. Computer Science. Hands-on with software-defined radio (SDR), GNU Radio, and end-to-end simulation from waveform generation through Cramér–Rao lower bound (CRLB) performance analysis.",
+    "_comment": "One rewritable summary per variant. Keep it 2-3 sentences, keyword-dense, no fluff adjectives like 'dynamic' or 'innovative' — LLM screeners discount them and human reviewers dislike them."
+  },
+
+  "work": [
+    {
+      "id": "aspen",
+      "company": "Aspen Consulting Group",
+      "position": "Modeling & Simulation Engineer",
+      "_comment_position": "Current resume says 'Software Engineer' — pick whichever matches your actual title/what HR would confirm, but M&S Engineer is more descriptive for these roles",
+      "location": "",
+      "startDate": "2025-08",
+      "summary": "MATLAB-based modeling and simulation of RF/electronic warfare systems on a U.S. Army EW contract, from feasibility analysis through field test support.",
+      "highlights": [
+        {
+          "text": "Developed a MATLAB time difference of arrival (TDOA) geolocation simulation framework using generalized cross-correlation with phase transform (GCC-PHAT), including isochrone/hyperbola visualization and multi-sensor geometry analysis",
+          "tags": ["tdoa", "geolocation", "matlab", "gcc-phat", "signal-processing", "ew"],
+          "_verify": "confirm scope; add scale (number of sensor configs, scenario count)"
+        },
+        {
+          "text": "Performed geolocation accuracy assessment including geometric dilution of precision (GDOP) heatmaps, circular error probable (CEP) analysis, and Cramér–Rao lower bound (CRLB) error budgets across sensor geometries",
+          "tags": ["tdoa", "crlb", "gdop", "cep", "matlab", "analysis", "geolocation"],
+          "_verify": "CRLB error-budget work was identified as in-progress/gap — confirm what is actually complete"
+        },
+        {
+          "text": "Modeled RF waveforms and channel effects including linear frequency modulated (LFM) pulses and additive white Gaussian noise (AWGN) with correct complex-baseband SNR scaling for detection and correlation performance studies",
+          "tags": ["matlab", "waveforms", "lfm", "awgn", "snr", "signal-processing"],
+          "_verify": true
+        },
+        {
+          "text": "Implemented Kalman filter-based tracking for emitter state estimation within the geolocation pipeline",
+          "tags": ["kalman", "tracking", "fusion", "estimation", "matlab"],
+          "_verify": "confirm filter type (EKF? linear?) and whether this is deployed in the framework or exploratory"
+        },
+        {
+          "text": "Built MATLAB tools for situational awareness, antenna analysis, and communications link analysis supporting Army EW program milestones",
+          "tags": ["matlab", "antennas", "link-analysis", "ew", "army"],
+          "_verify": "from current resume, generic — replace with 1-2 concrete deliverables if possible"
+        },
+        {
+          "text": "Supported field test planning and post-test data analysis for EW system evaluation",
+          "tags": ["field-test", "analysis", "ew"],
+          "_verify": "current resume implies field testing involvement — confirm and specify your role"
+        }
+      ]
+    },
+    {
+      "id": "devcom",
+      "company": "U.S. Army DEVCOM C5ISR Center",
+      "position": "SMART Scholarship Intern",
+      "startDate": "2023-06",
+      "endDate": "2024-08",
+      "summary": "Two summer internships (2023, 2024) developing electronic warfare prototypes and analysis for U.S. Army applications.",
+      "highlights": [
+        {
+          "text": "Built an LTE-based passive radar model in MATLAB, simulating illuminator-of-opportunity detection including reference/surveillance channel processing",
+          "tags": ["passive-radar", "lte", "matlab", "radar", "signal-processing", "ew"],
+          "_verify": "add detection performance numbers or scenario scale if available"
+        },
+        {
+          "text": "Tested and analyzed direction-finding (DF) antenna performance; designed a novel antenna and evaluated it against existing arrays",
+          "tags": ["direction-finding", "antennas", "df", "rf", "ew"],
+          "_verify": "antenna type? frequency band? what metric improved?"
+        },
+        {
+          "text": "Created data visualizations and briefed results to Army customers and leadership",
+          "tags": ["visualization", "communication", "briefing"],
+          "_verify": true
+        }
+      ]
+    },
+    {
+      "id": "smcm-ta",
+      "company": "St. Mary's College of Maryland — Physics Dept.",
+      "position": "General Physics Lab Teaching Assistant",
+      "startDate": "2022-08",
+      "endDate": "2024-05",
+      "summary": "Three semesters assisting instruction of Physics I & II labs.",
+      "highlights": [
+        {
+          "text": "Taught lab sections, guided students through experimental setup and analysis, and supported grading for introductory physics courses",
+          "tags": ["teaching", "communication", "physics"],
+          "_verify": false
+        }
+      ],
+      "_comment": "Low priority for defense-tech variants — include only when space allows or for APL new-grad roles where teaching/mentoring reads well"
+    },
+    {
+      "id": "ngc",
+      "company": "Northrop Grumman",
+      "position": "College Technical Intern",
+      "startDate": "2022-06",
+      "endDate": "2022-08",
+      "summary": "IT hardware lifecycle support: device deployment, data migration, hardware/firmware troubleshooting.",
+      "highlights": [],
+      "_comment": "Keep as a one-liner — the value is the name recognition and showing early defense-industry exposure, not the work itself"
+    }
+  ],
+
+  "education": [
+    {
+      "institution": "St. Mary's College of Maryland",
+      "area": "B.S. Applied Physics; B.S. Computer Science; Mathematics Minor",
+      "startDate": "2021-09",
+      "endDate": "2025-05",
+      "gpa": "3.98",
+      "honors": "Summa Cum Laude",
+      "highlights": [
+        {
+          "text": "Senior Project: LTE-based passive radar system model in Julia with software-defined radio (SDR) hardware integration; validated against MATLAB model from DEVCOM internship; presented to Physics Department and college community",
+          "tags": ["passive-radar", "julia", "sdr", "lte", "capstone"]
+        },
+        {
+          "text": "Department of Defense SMART Scholarship Recipient",
+          "tags": ["award", "dod", "credential"]
+        },
+        {
+          "text": "Physics Service Award (2023); Physics Honor Society",
+          "tags": ["award"]
+        },
+        {
+          "text": "NCAA lacrosse: 2× team captain, 3× USILA Honorable Mention All-American, USILA Scholar All-American, DIIICA Region IV Student-Athlete of the Year (2025)",
+          "tags": ["leadership", "athletics", "award"],
+          "_comment": "Condense all athletics to ONE line on tailored resumes. It signals discipline/leadership; the full award list belongs on LinkedIn/website, not the PDF"
+        }
+      ],
+      "_comment_hs": "High school section removed entirely — one year post-grad with a double major and DoD internships, it now costs more space than it earns. LinkedIn can keep it."
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "tdoa-framework",
+      "name": "TDOA Geolocation Simulation & Assessment Framework",
+      "context": "work-adjacent / portfolio writeup",
+      "description": "End-to-end MATLAB framework for multi-sensor TDOA emitter geolocation: GCC-PHAT time-delay estimation, parametric isochrone plotting, GDOP heatmaps, CEP statistics, CRLB comparison, and Mapping Toolbox geographic visualization.",
+      "tags": ["tdoa", "gcc-phat", "crlb", "gdop", "matlab", "geolocation", "signal-processing"],
+      "_verify": "This overlaps with Aspen work — decide what is publicly presentable vs. contract work. Portfolio version should be a clean-room unclassified reimplementation.",
+      "status": "active"
+    },
+    {
+      "id": "pluto-sdr",
+      "name": "PlutoSDR / GNU Radio Experiments",
+      "url": "https://github.com/hatfieldq/pluto_sdr",
+      "description": "Software-defined radio projects on ADALM-Pluto: FM transmitter with FCC Part 15-compliant operation, combined Tx/Rx scanning flowgraph, audio routing on Linux (PipeWire), spectrum capture and analysis in GNU Radio.",
+      "tags": ["sdr", "gnu-radio", "plutosdr", "linux", "rf", "hands-on"],
+      "status": "active"
+    },
+    {
+      "id": "rf-positioner",
+      "name": "Satellite Tracking RF Positioner Application",
+      "description": "Full-stack ground-station steering app: Space-Track.org TLE ingestion, SGP4 orbit propagation in MATLAB, NextMove positioner control via REST API (FastAPI backend), and GNU Radio SDR Doppler correction.",
+      "tags": ["satellites", "sgp4", "fastapi", "python", "matlab", "sdr", "full-stack", "space"],
+      "_verify": "confirm completion state — built through backend API surface; is hardware-in-the-loop demonstrated?",
+      "status": "unknown"
+    },
+    {
+      "id": "counter-uas",
+      "name": "Counter-UAS RF Fingerprinting System",
+      "description": "PLANNED: RF-based drone detection/classification using CNN/LSTM models on NVIDIA Jetson Orin Nano with SDR front end; phased build plan and bill of materials complete.",
+      "tags": ["counter-uas", "ml", "cnn", "lstm", "jetson", "sdr", "drones"],
+      "status": "planned",
+      "_comment": "Do NOT put planned projects on the resume as accomplishments. Keep here so the moment hardware arrives and phase 1 works, it can be promoted."
+    },
+    {
+      "id": "drone-sar",
+      "name": "Drone-Borne Synthetic Aperture Radar",
+      "description": "PLANNED: SAR imaging payload using TI AWR1843BOOST + DCA1000EVM with RTK GPS on a drone platform (ArduPilot/PX4).",
+      "tags": ["sar", "radar", "drones", "mmwave", "hardware"],
+      "status": "planned"
+    },
+    {
+      "id": "portfolio-site",
+      "name": "Defense-Sector Technical Portfolio Site",
+      "description": "Next.js/TypeScript/Tailwind/MDX site on Vercel with interactive DSP demos: TDOA visualizer, FFT/spectrogram, phased-array beam pattern explorer.",
+      "tags": ["nextjs", "typescript", "web", "dsp", "interactive", "portfolio"],
+      "status": "in-progress"
+    }
+  ],
+
+  "skills": {
+    "signal_processing": {
+      "label": "Signal Processing & RF",
+      "items": ["TDOA geolocation", "GCC-PHAT correlation", "passive radar", "direction finding", "Kalman filtering", "CRLB / CEP / GDOP analysis", "LFM waveforms", "FFT / spectral analysis", "phased arrays (theory)", "link budget analysis"],
+      "tags": ["core"]
+    },
+    "languages_tools": {
+      "label": "Languages & Tools",
+      "items": ["MATLAB (incl. Mapping Toolbox, Satellite Communications Toolbox)", "Python (NumPy/SciPy, FastAPI)", "C/C++", "Julia", "Git/GitHub", "Linux", "TypeScript/JavaScript"],
+      "tags": ["core"],
+      "_verify": "C++ was flagged as a gap for production roles — keep listed but be interview-ready; consider 'C++ (working)' honesty tiering only if asked"
+    },
+    "sdr_hardware": {
+      "label": "SDR & Hardware",
+      "items": ["GNU Radio", "ADALM-Pluto SDR", "antenna testing", "ArduPilot/PX4 (hobbyist)", "DIY electronics"],
+      "tags": ["hands-on"]
+    },
+    "credential": {
+      "label": "Clearance",
+      "items": ["Active TS/SCI (DoD)"],
+      "tags": ["credential"],
+      "_comment": "Also appears in header — repetition here is intentional; keyword filters scan both"
+    }
+  },
+
+  "targets": {
+    "anduril-tracking-fusion": {
+      "company": "Anduril Industries",
+      "role": "Robotics Tracking and Fusion Engineer (or similar perception/fusion roles)",
+      "priority": "primary",
+      "lead_tags": ["kalman", "tracking", "fusion", "estimation", "cpp", "geolocation"],
+      "notes": "Lead with Kalman/tracking and TDOA estimation; emphasize C++ trajectory and production-code intent; Lattice ecosystem language: 'sensor fusion', 'multi-target tracking', 'state estimation'"
+    },
+    "chaos-rf-geolocation": {
+      "company": "CHAOS Industries",
+      "role": "RF Geolocation Engineer",
+      "priority": "primary",
+      "lead_tags": ["tdoa", "gcc-phat", "crlb", "gdop", "direction-finding", "passive-radar"],
+      "notes": "Strongest direct match. Lead with the full TDOA framework + CRLB analysis + passive radar. Posting was senior-level — apply anyway or watch for mid-level openings."
+    },
+    "jhuapl-newgrad": {
+      "company": "Johns Hopkins University Applied Physics Laboratory (JHU APL)",
+      "role": "New-grad Signal Processing / EW / Sensor Systems roles",
+      "priority": "primary-highest-probability",
+      "lead_tags": ["signal-processing", "physics", "matlab", "passive-radar", "teaching"],
+      "notes": "Physics+CS double major and academic record matter most here; TA experience is a plus; SMART scholarship signals DoD pipeline familiarity"
+    },
+    "shield-ai": {
+      "company": "Shield AI",
+      "role": "Autonomy / perception / EW-adjacent software roles",
+      "priority": "secondary",
+      "lead_tags": ["kalman", "tracking", "ml", "python", "cpp", "drones"],
+      "notes": "Drone/autonomy angle: ArduPilot familiarity, tracking, planned counter-UAS work once real"
+    },
+    "l3harris": {
+      "company": "L3Harris",
+      "role": "EW / SIGINT systems engineering",
+      "priority": "secondary",
+      "lead_tags": ["ew", "direction-finding", "antennas", "matlab", "army"],
+      "notes": "Traditional prime: clearance + Army EW contract experience is the lead; conventional resume tone"
+    }
+  }
+}

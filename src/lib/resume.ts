@@ -4,6 +4,7 @@ import resumeData from "@/data/resume-master.json"
 export interface Bullet {
     text: string;
     tags?: string[];
+    excluded?: boolean;
 }
 
 // Job entry and doubles as school entry
@@ -41,6 +42,7 @@ export interface Project {
     description: string;
     tags?: string[];
     status: ProjectStatus;
+    excluded?: boolean;
 }
 
 // Skills data sorted by topic
@@ -76,11 +78,12 @@ export interface TargetVariant {
     priority: string;
     lead_tags: string[];
     notes: string;
+    summary?: string;
 
 }
 
 // Full resume interface for export
-export interface Resume {
+export interface ResumeData {
     basics: Basics;
     education: Education[];
     work: Job[];
@@ -89,4 +92,7 @@ export interface Resume {
     targets: Record<string, TargetVariant>;
 }
 
-export const resume = resumeData as Resume;
+export const resume = resumeData as ResumeData;
+
+export type RenderableResume= Omit<ResumeData, "targets">;
+

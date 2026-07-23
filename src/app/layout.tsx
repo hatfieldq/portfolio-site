@@ -17,8 +17,13 @@ const monda = Monda({
 
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://quinntenhatfield.com"),
   title: "Q's Portfolio",
   description: "Created to showcase my work and skills.",
+  openGraph: {
+    title: "Q's Portfolio", 
+    description: "Created to showcase my work and skills.",
+  },
 };
 
 export default function RootLayout({

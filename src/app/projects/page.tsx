@@ -23,7 +23,7 @@ export default function Projects() {
                             <h2 className="text-xl font-semibold border-l-4 border-blue-500 pl-3 mb-4">{project.title}</h2>
                             <p className="text-sm mt-4 mb-4">{project.description}</p>
                             {project.tags.map((tag) => (
-                                <span key={tag} className="text-xs bg-gray-100 px-2 py-1 rounded-full">{tag}</span>
+                                <span key={tag} className="text-xs bg-gray-100 dark:bg-gray-700 dark:text-gray-100 px-2 py-1 rounded-full ">{tag}</span>
                             ))}
                             <div className=" flex  mt-4">
                                 {project.githubURL && <a href={project.githubURL} target="_blank" rel="noopener noreferrer" className="hover:text-white">

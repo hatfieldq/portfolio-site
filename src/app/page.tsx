@@ -1,13 +1,26 @@
-import Image from "next/image";
+import Link from "next/link"
 
 export default function Home() {
   return (
     <div>
-      <main>
-        <h1 >Welcome to My Portfolio</h1>
-        <p>
-          This is a simple portfolio website built with Next.js.
+      <main className="p-8 overflow-hidden">
+        <h1 className="text-4xl md:text-8xl font-bold">Quinnten Hatfield</h1>
+        <p className="mt-4 text-2xl md:text-4xl">
+          I build physics-based models for multi-domain geolocation sensor systems.
         </p>
+
+        {/*FEATURED DEMO PLACEHOLDER */}
+
+        {/*Links and contact info */}
+        <section className="mt-10 flex flex-wrap gap-4">
+          <Link href="/projects" className="border rounded-lg p-4 shadow-sm hover:bg-blue-300 hover:shadow-md transition-shadow">
+            Projects</Link>
+          <Link href="/resources" className="border rounded-lg p-4 shadow-sm hover:bg-blue-300 hover:shadow-md transition-shadow">
+            Resources</Link>
+          <a href="mailto:qhatfield27@gmail.com" className="border rounded-lg p-4 shadow-sm hover:bg-green-500 hover:shadow-md transition-shadow">
+            Contact Me</a>
+        </section>
+
       </main>
     </div>
   );

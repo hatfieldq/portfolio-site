@@ -1,3 +1,5 @@
+'use client'
+
 import { useRef, useState, useEffect } from "react";
 
 type Point = {x: number; y: number}
@@ -22,15 +24,43 @@ export default function TdoaDemo() {
         if (!ctx) return
 
         ctx.clearRect(0, 0, WIDTH, HEIGHT)
+        ctx.fillStyle = 'green'
 
         for (const s of sensors) {
-            // draw circle
+            ctx.beginPath()
+            ctx.arc(s.x, s.y, 6, 0, 2 * Math.PI) 
+            ctx.fill()
         }
-    }, [sensors])
+
+        if (emitter) {
+            ctx.beginPath()
+            ctx.arc(emitter.x, emitter.y, 6, 0, 2 * Math.PI)
+            ctx.fillStyle = 'red'
+            ctx.fill()
+        }
+    }, [sensors, emitter])
+
+
+    function toCanvasCoords(e: React.MouseEvent<HTMLCanvasElement>): Point {
+        const canvas = e.currentTarget
+        const rect = canvas.getBoundingClientRect()
+        const scaleX = canvas.width / rect.width
+        const scaleY = canvas.height / rect.height
+        return {
+            x: (e.clientX - rect.left) * scaleX,
+            y: (e.clientY - rect.top) * scaleY,
+        }
+    }
+
+    function handleClick(e: React.MouseEvent<HTMLCanvasElement>) {
+        const coords = toCanvasCoords(e)
+        setEmitter(coords)
+    }
+
 
     return(
-        <canvas ref={canvasRef} width={WIDTH} height = {HEIGHT}
-            className="border rounded bg-white touch-none" />
+        <canvas ref={canvasRef} onClick={handleClick} width={WIDTH} height = {HEIGHT}
+            className="border rounded bg-white touch-none " />
     )
 }
 

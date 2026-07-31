@@ -13,8 +13,11 @@ export default function Home() {
         {/*FEATURED DEMO PLACEHOLDER */}
         <section id="tdoa" className="mt-12">
           <h2 className="text-2xl font-semibold">Interactive: 2D TDOA Geolocation</h2>
-          <p className="mt-2">Click on the canvas to place an emitter</p>
-          <div className="mt-4">
+          <p className="mt-2">
+            Click on the canvas to place an emitter in red. Click and drag the 
+            green receivers to change the geometry. The TDOA hyperbolas are drawn in blue.
+          </p>
+          <div className="mt-4 mx-auto max-w-2xl">
             <TdoaDemo />
           </div>
         </section>

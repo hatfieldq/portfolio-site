@@ -16,6 +16,10 @@ function rangeDiff(emitter: Point, sensor: Point, ref: Point): number {
     return diff
 }
 
+function sensorAt(p: Point, sensors: Point[], radius = 10): number {
+    return sensors.findIndex((s) => distance(s, p) <= radius)
+}
+
 function hyperbolaPoints(ref: Point, sensor: Point, delta: number): Point[] {
     const a = Math.abs(delta) / 2
     const c = distance(ref, sensor) / 2
@@ -41,8 +45,8 @@ function hyperbolaPoints(ref: Point, sensor: Point, delta: number): Point[] {
     return points
 }
 
-const WIDTH = 600
-const HEIGHT = 400
+const WIDTH = 700
+const HEIGHT = 500
 
 export default function TdoaDemo() {
     const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -52,6 +56,7 @@ export default function TdoaDemo() {
         { x:300, y:350 },
     ])
     const [emitter, setEmitter] = useState<Point | null>(null)
+    const [moveSensor, setMoveSensor] = useState<number | null>(null)
 
 
     useEffect(() => {
@@ -61,6 +66,13 @@ export default function TdoaDemo() {
         if (!ctx) return
 
         ctx.clearRect(0, 0, WIDTH, HEIGHT)
+        const GRID = 60
+        ctx.strokeStyle = '#e5e7eb'          // light gray (tailwind gray-200)
+        ctx.lineWidth = 1
+        ctx.beginPath()
+        for (let x = 0; x <= WIDTH; x += GRID) { ctx.moveTo(x, 0); ctx.lineTo(x, HEIGHT) }  // verticals
+        for (let y = 0; y <= HEIGHT; y += GRID) { ctx.moveTo(0, y); ctx.lineTo(WIDTH, y) }  // horizontals
+        ctx.stroke()
         ctx.fillStyle = 'green'
 
         for (const s of sensors) {
@@ -101,15 +113,42 @@ export default function TdoaDemo() {
         }
     }
 
-    function handleClick(e: React.MouseEvent<HTMLCanvasElement>) {
-        const coords = toCanvasCoords(e)
-        setEmitter(coords)
+
+    function handlePointerDown(e: React.PointerEvent<HTMLCanvasElement>) {
+        const p = toCanvasCoords(e)
+        const idx = sensorAt(p, sensors)
+        if (idx >= 0) {
+            e.currentTarget.setPointerCapture(e.pointerId)
+            setMoveSensor(idx)
+        } else {
+            setEmitter(p)
+        }
     }
+
+    function handlePointerMove(e: React.PointerEvent<HTMLCanvasElement>) {
+        if (moveSensor === null) return
+        const p = toCanvasCoords(e)
+        const clamped = { x: clamp(p.x, 0, WIDTH), y: clamp(p.y, 0, HEIGHT) }
+        setSensors((prev) => prev.map((s, i) => (i === moveSensor ? clamped : s)))
+    }
+
+    function handlePointerUp(e: React.PointerEvent<HTMLCanvasElement>) {
+        setMoveSensor(null)
+    }
+
+    function clamp(v: number, min: number, max: number): number {
+        return Math.max(min, Math.min(max, v))  
+    
+}
 
 
     return(
-        <canvas ref={canvasRef} onClick={handleClick} width={WIDTH} height = {HEIGHT}
-            className="border rounded bg-white touch-none " />
+        <canvas ref={canvasRef} 
+         onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp}
+        width={WIDTH} height = {HEIGHT}
+        className={`border rounded bg-white touch-none block mx-auto max-w-full h-auto ${
+        moveSensor !== null ? 'cursor-grabbing' : 'cursor-crosshair'
+        }`} />
     )
 }
 

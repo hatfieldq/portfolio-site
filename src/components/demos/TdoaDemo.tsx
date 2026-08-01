@@ -16,7 +16,7 @@ function rangeDiff(emitter: Point, sensor: Point, ref: Point): number {
     return diff
 }
 
-function sensorAt(p: Point, sensors: Point[], radius = 10): number {
+function sensorAt(p: Point, sensors: Point[], radius = 30): number {
     return sensors.findIndex((s) => distance(s, p) <= radius)
 }
 
@@ -146,9 +146,8 @@ export default function TdoaDemo() {
         <canvas ref={canvasRef} 
          onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp}
         width={WIDTH} height = {HEIGHT}
-        className={`border rounded bg-white touch-none block mx-auto max-w-full h-auto ${
-        moveSensor !== null ? 'cursor-grabbing' : 'cursor-crosshair'
-        }`} />
+        className={`border rounded bg-white touch-none block mx-auto max-w-full h-auto 
+        ${moveSensor !== null ? 'cursor-grabbing' : 'cursor-crosshair'}`} />
     )
 }
 

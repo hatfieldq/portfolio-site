@@ -41,7 +41,7 @@ export default function About() {
 
                 <h2 className="text-xl font-semibold mt-4">Contact Information</h2>
                 <ul className="mt-2">
-                    <li>Email: qhatfield27@gmail.com</li>
+                    <li>Email: <a href="mailto:qhatfield27@gmail.com" className="text-blue-500 hover:underline">qhatfield27@gmail.com</a></li>
                     <li>LinkedIn: <a href="https://linkedin.com/in/quinnten-hatfield" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">linkedin.com/in/quinnten-hatfield</a></li>
                     <li>GitHub: <a href="https://github.com/hatfieldq" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">github.com/hatfieldq</a></li>
                 </ul>

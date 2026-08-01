@@ -2,13 +2,16 @@ import Link from "next/link";
 import { FaGithub } from "react-icons/fa"
 
 const projects = [
-    { key: 1, title: "Personal FM Radio Station via SDR", description: "PlutoSDR and GNURadio enabled me to create a personal FM radio station in my room!", 
+    { key: 1, title: "Personal FM Radio Station via SDR", description: "Personal FM radio station. Tx/Rx to enable Spotify streaming via PC rerouted over-the-air to an old analog FM radio. Built with GNURadio and a PlutoSDR.", 
         tags: ["SDR", "GNURadio", "PlutoSDR", "FM"], githubURL: "https://github.com/hatfieldq/pluto_sdr", liveUrl: null},
     { key: 2, title: "Interactive TDOA Geolocation Visualizer", description: "Visualize the TDOA hyperbolas and see how they change with geometry. Built with canvas and React.", 
         tags: ["TDOA", "Geolocation", "React"], githubURL: null, liveUrl: "/#tdoa" },
+    { key: 4, title: "This Website",
+        description: "The site you're on. A Next.js (App Router) portfolio with hand-built interactive canvas demos, dark mode, and a fully responsive layout. Written in TypeScript.",
+        tags: ["Next.js", "React", "TypeScript", "Tailwind"],
+        githubURL: "https://github.com/hatfieldq/portfolio-site", liveUrl: null },
     { key: 3, title: "More content coming soon!", description: "Stay tuned for more interactive visuals, simulations, and SDR work!",
-        tags: [], githubURL: null, liveUrl: null }
-
+        tags: [], githubURL: null, liveUrl: null }, 
 ]
 
 export default function Projects() {
@@ -23,8 +26,8 @@ export default function Projects() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
                     {projects.map((project) => (
                         <div key={project.key} className="border rounded-lg p-4 shadow-sm hover:bg-green-500 hover:shadow-md transition-shadow flex flex-col h-full">
-                            <h2 className="text-xl font-semibold pl-3 mb-4">{project.title}</h2>
-                            <p className="text-sm mt-auto mb-4">{project.description}</p>
+                            <h2 className="text-xl font-semibold pl-3 mb-4 border-b-4 rounded px-3 py-2 mb-4">{project.title}</h2>
+                            <p className="text-sm  mb-4">{project.description}</p>
                             <div className="mt-auto flex flex-col gap-3">
                                 <div className="flex flex-wrap gap-1">
                                     {project.tags.map((tag) => (
@@ -35,7 +38,7 @@ export default function Projects() {
                                     {project.githubURL && <a href={project.githubURL} target="_blank" rel="noopener noreferrer" className="hover:text-white">
                                         <FaGithub className="rounded-full text-2xl bg-blue-500" />
                                     </a>}
-                                    {project.liveUrl && (<Link href={project.liveUrl} className="text-sm border rounded-lg p-1 hover:text-white bg-blue-500">
+                                    {project.liveUrl && (<Link href={project.liveUrl} className="text-sm font-bold border rounded-lg p-1 hover:text-white bg-blue-500">
                                         Live Demo
                                     </Link>)}
                                 </div>

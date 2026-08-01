@@ -12,9 +12,9 @@ export default function Nav() {
                     height={72}
                     className="w-9 h-9 md:w-20 md:h-20" 
                 />
-                Quinnten
+                
             </Link>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 lg:gap-4">
             <Link href="/about" className="hover:text-green-500">About</Link>
             <Link href="/projects" className="hover:text-green-500">Projects</Link>
             {/* <Link href="/learning" className="hover:text-green-500">Learning</Link> */}

@@ -10,7 +10,7 @@ export default function Nav() {
                     alt="Site Logo"
                     width={72}
                     height={72}
-                    className="w-9 h-9 md:w-20 md:h-20" 
+                    className="w-13 h-13 md:w-20 md:h-20" 
                 />
                 
             </Link>

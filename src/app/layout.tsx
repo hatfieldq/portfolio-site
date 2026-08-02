@@ -21,8 +21,16 @@ export const metadata: Metadata = {
   title: "Q's Portfolio",
   description: "Created to showcase my work and skills.",
   openGraph: {
-    title: "Q's Portfolio", 
+    title: "Q's Portfolio",
     description: "Created to showcase my work and skills.",
+    // og:url — the canonical URL the card should point at. Resolved against
+    // metadataBase above, so "/" becomes https://quinntenhatfield.com/.
+    // LinkedIn keys its scrape cache off this value, not off the pasted URL,
+    // which is what collapses ?utm_source=... variants into one card.
+    url: "/",
+    // og:type — tells the crawler what kind of thing this is. "website" gets
+    // the plain large card; "article" makes LinkedIn look for author/date tags.
+    type: "website",
   },
 };
 

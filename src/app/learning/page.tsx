@@ -6,12 +6,12 @@ export default function Learning() {
     const posts = getAllPosts();
     return (
         <main>
-            <h1 className="text-2xl font-bold">Learning</h1>
+            <h1 className="text-4xl font-bold">Learning</h1>
             {posts.length === 0 ? (
                 <p>Nothing here yet. Check back later for updates.</p>
             ) : (
                 <div>
-                <p className="mt-4">Here I will be writing some blog-style articles about various topics related to my
+                <p className="mt-4 indent-8">Here I will be writing some blog-style articles about various topics related to my
                     work, projects, and interests. 
                 </p>
                 <ul className="mt-4 space-y-3">

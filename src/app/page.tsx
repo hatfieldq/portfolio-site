@@ -14,9 +14,9 @@ export default function Home() {
         <section id="tdoa" className="mt-12">
           <h2 className="text-2xl font-semibold">Interactive: 2D TDOA Geolocation</h2>
           <p className="mt-2 indent-8">
-            Time-Difference-of-Arrival (TDOA) geolocation is a technique used to determine the position of a signal source.
+            Time difference of arrival (TDOA) geolocation is a technique used to determine the position of a signal source.
             This interactive demo allows you to explore how TDOA works in a 2D environment and how TDOA hyperbolas intersect to determine an unknown position.
-            I will be posting a more detailed writeup and explanation of TDOA in the future, but for now you can play around with the demo below.
+            Find my full write up on TDOA geolocation through the Learning page. Or access it directly <Link href="/learning/tdoa-geolocation" className="text-blue-500 hover:underline">here</Link>.
           </p>
           <p className="mt-2 indent-8">
             Click on the canvas to place an emitter in red. Drag the 

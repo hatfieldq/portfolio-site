@@ -36,9 +36,9 @@ export default function Projects() {
                                 </div>
                                 <div className="flex items-center gap-3 mt-auto">
                                     {project.githubURL && <a href={project.githubURL} target="_blank" rel="noopener noreferrer" className="hover:text-white">
-                                        <FaGithub className="rounded-full text-2xl bg-blue-500" />
+                                        <FaGithub className="rounded-full text-2xl bg-blue-400" />
                                     </a>}
-                                    {project.liveUrl && (<Link href={project.liveUrl} className="text-sm font-bold border rounded-lg p-1 hover:text-white bg-blue-500">
+                                    {project.liveUrl && (<Link href={project.liveUrl} className="text-sm font-bold border rounded-lg p-1 hover:text-white bg-blue-400">
                                         Live Demo
                                     </Link>)}
                                 </div>

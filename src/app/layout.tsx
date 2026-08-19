@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Orbitron, Monda } from "next/font/google";
 import "./globals.css";
+import "katex/dist/katex.min.css";
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav"
 

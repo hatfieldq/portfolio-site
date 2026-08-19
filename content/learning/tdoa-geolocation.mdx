@@ -1,0 +1,76 @@
+---
+title: "TDOA Geometry"
+date: "2026-08-18"
+tags: ["RF", "EW", "DSP"]
+description: "Three receivers, one unknown emitter, and the hyperbolas that find it."
+---
+
+import TdoaDemo from '@/components/demos/TdoaDemo'
+
+## Situation
+An emitter is transmitting radio frequency (RF) energy. We have no way of decoding its signal 
+but we want to find out where it is coming from. Time of arrival (TOA) systems can be very precise, but they 
+can only be used when the system has knowledge 
+of when the transmission was sent. This is the case with GPS, where each signal contains information 
+that says "I sent this signal at xx:xx:xx time". With TOA off the table, we can use either multiple
+ distributed angle of arrival (AoA) systems, a distributed 
+time difference of arrival (TDOA) system, 
+or a combination of both. AoA needs directional antennas or an interferometric array and has the drawback of getting worse 
+at long ranges. TDOA needs synchronized clocks and is highly dependent on geometry.
+
+Because implementing TDOA has a simpler antenna baseline, this article will go over 
+the basics of 2-dimensional, 3 receiver TDOA system geometry.
+
+
+## The TDOA Isochrone
+
+To locate an emitter with TDOA, we first measure the time difference between 
+the received signals, $\tau$. Then, because RF propagates at a constant speed in a given medium, 
+we can calculate the range 
+difference, $d$, of the emitter by 
+multiplying $\tau$ by the speed of light, $c$.
+
+$$
+d = c\tau
+$$
+
+The set of points whose range difference has magnitude $|d|$, is a hyperbola 
+with the pair of receivers as the foci. For one 
+pair of receivers, we get one hyperbola on the map. 
+when you take into account the sign of $\tau$ (which receiver saw the signal first), 
+we can reduce that to just one branch of the hyperbola. The emitter can 
+be anywhere along that branch, which we call an isochrone.
+
+
+
+## Three Receivers Produce a Fix
+
+With the third receiver, we produce another isochrone.
+The intersection of the two isochrones is the candidate position 
+of our emitter! In general, $N$ receivers give $N-1$ independent measurements. To get a 2D fix, we need 3 receivers. 
+For a 3D fix, we would need 4 receivers. But beware, with only 3 receivers, it is possible that the isochrones cross at two separate 
+points, which is an ambiguity we need to solve. We can shake off the false fix with 
+another receiver or some transmitter or receiver motion over time.
+
+Click anywhere in the box to add an emitter. The two blue curves are its isochrones and the green circles 
+are the TDOA receivers. You can drag the receivers around to change the geometry of the TDOA system too.
+
+1. **Start inside the receiver triangle.** You'll see the isochrones 
+intersect perfectly over the emitter. 
+2. **Drag a receiver around.** See the isochrones change with geometry.
+3. **Move the emitter far outside the triangle.** Now the curves cross at a shallow angle. Imagine what might happen 
+to the intersection if one of the curves were moved a little bit. It would result in a big geolocation error.
+4. **Try to make the curves intersect twice.** If you can do this, you can see where ambiguities might appear in a 
+3 receiver system.
+
+<TdoaDemo />
+
+
+## What's Left
+
+The geometry of TDOA is the most visible part to a typical operator, but it is not the whole story. 
+We still need to learn a few things like how to measure the time delay, how to visualize error in our time delay measurement, 
+how often to update the isochrones, how to resolve ambiguities, and what about using a heat map instead of isochrones?
+There is a lot more to be said about TDOA, which we will save for another write up!
+
+Thanks for reading!

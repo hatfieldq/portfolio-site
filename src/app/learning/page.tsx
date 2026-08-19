@@ -11,15 +11,15 @@ export default function Learning() {
                 <p>Nothing here yet. Check back later for updates.</p>
             ) : (
                 <div>
-                <p className="mt-4">Below are some blog-style write ups for different topics that I have been exploring in my personal time.
-                    Also there are some write ups that relate directly to some of my projects!
+                <p className="mt-4">Here I will be writing some blog-style articles about various topics related to my
+                    work, projects, and interests. 
                 </p>
                 <ul className="mt-4 space-y-3">
                     {posts.map((post) => (
                         <li key={post.slug}>
                             <Link
                                 href={`/learning/${post.slug}`}
-                                className="block rounded-lg border px-4 py-3 transition-colors hover:bg-blue-300"
+                                className="block rounded-lg border px-4 py-3 transition-colors hover:bg-green-500"
                             >
                                 <div className="flex items-center justify-between gap-4">
                                     <span className="font-semibold">{post.title}</span>

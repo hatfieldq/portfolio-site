@@ -1,4 +1,4 @@
-import { getPostBySlug } from '@/lib/posts';
+import { getPostBySlug, getAllPosts } from '@/lib/posts';
 
 export default async function LearningPost({
     params, 
@@ -6,14 +6,22 @@ export default async function LearningPost({
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    const { meta, contentHtml } = await getPostBySlug(slug);
+    const { meta, Post } = await getPostBySlug(slug);
 
     return (
         <div>
             <main>
-                <h1 className="text-2xl font-bold">{meta.title}</h1>
-                <div dangerouslySetInnerHTML={{__html: contentHtml}}/>    
+                <h1 className="text-4xl font-bold mb-4 text-center border-b">{meta.title}</h1>
+                    <div className="prose dark:prose-invert max-w-none">
+                        <Post />
+                    </div>
             </main>
         </div>
     );
 }
+
+export function generateStaticParams() {
+    return getAllPosts().map((post) => ({ slug: post.slug }));
+}
+
+export const dynamicParams = false;
